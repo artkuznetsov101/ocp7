@@ -1,6 +1,6 @@
 package ocp7.advanced;
 
-class OCPAnonymous {
+class OCPAnonymousClass {
     public static void main(String args[]) {
         Lecture lecture = new Lecture();
         lecture.notes(new Pen() {

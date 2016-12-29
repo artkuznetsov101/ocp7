@@ -1,6 +1,6 @@
 package ocp7.advanced;
 
-public class OCPStaticNested {
+public class OCPStaticNestedClass {
     static int outerStatic = 10;
     int outerInstance = 20;
 
@@ -11,7 +11,7 @@ public class OCPStaticNested {
 
     public static void main(String args[]) {
         StaticNested nested1 = new StaticNested();
-        OCPStaticNested.StaticNested nested2 = new OCPStaticNested.StaticNested();
+        OCPStaticNestedClass.StaticNested nested2 = new OCPStaticNestedClass.StaticNested();
         nested1.innerStatic = 99;
         nested1.innerInstance = 999;
         System.out.println(nested1.innerStatic + ":" + nested1.innerInstance);
