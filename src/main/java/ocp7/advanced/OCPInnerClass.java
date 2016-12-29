@@ -17,7 +17,7 @@ class Outer {
 
     Inner in1 = new Inner();
     Inner in2 = this.new Inner();
-    //Inner in3 = new Outer().new Inner();
+    Inner in3 = new Outer().new Inner();
 
     class Inner {
 
