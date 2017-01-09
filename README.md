@@ -1,6 +1,6 @@
-# ocp7
+# ocp7 (1Z0-804)
 
-Simple examples I used during the preparation for the **"Oracle Certified Professional, Java SE 7 Programmer"** exam (1Z0-804).
+Simple examples I used during the preparation for the **"Oracle Certified Professional, Java SE 7 Programmer"** exam.
 
 
 Covered exam topics with examples:
