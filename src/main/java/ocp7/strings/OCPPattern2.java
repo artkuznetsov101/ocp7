@@ -11,5 +11,14 @@ class OCPPattern2 {
         Matcher matcher = pattern.matcher(targetString);
         String replacedStr = matcher.replaceAll("[]");
         System.out.println(replacedStr);
+
+        String str = "o brother, where art thou! boo man!";
+        String rex = "\\b";
+        String replace = "X";
+        Pattern p = Pattern.compile(rex);
+        Matcher m = p.matcher(str);
+        String val = m.replaceAll(replace);
+        System.out.println(val);
+
     }
 }
