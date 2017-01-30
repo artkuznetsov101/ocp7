@@ -5,9 +5,31 @@ import java.util.Date;
 
 public class OCPCalendar {
     public static void main(String[] args) {
-        Calendar cal = Calendar.getInstance();
-        cal.set(1973, Calendar.SEPTEMBER, 30, 14, 10, 40);
-        Date date = cal.getTime();
-        System.out.print(date);
+
+        //set
+        Calendar cal1 = Calendar.getInstance();
+        cal1.set(1982, Calendar.SEPTEMBER, 20, 14, 10, 40);
+        Date date = cal1.getTime();
+        System.out.println(date);
+
+        //add
+        cal1.add(Calendar.DAY_OF_MONTH, -8);
+        cal1.add(Calendar.YEAR, -22);
+        date = cal1.getTime();
+        System.out.println(date);
+
+        //roll
+        cal1.roll(Calendar.YEAR, true);
+        cal1.roll(Calendar.MONTH, true);
+        cal1.roll(Calendar.DAY_OF_MONTH, true);
+        date = cal1.getTime();
+        System.out.println(date);
+
+        //roll
+        cal1.roll(Calendar.YEAR, -1);
+        cal1.roll(Calendar.MONTH, -1);
+        cal1.roll(Calendar.DAY_OF_MONTH, -1);
+        date = cal1.getTime();
+        System.out.println(date);
     }
 }
