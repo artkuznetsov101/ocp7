@@ -19,6 +19,17 @@ class OCPPath {
         System.out.println("toRealPath()-> " + path.toAbsolutePath());
         System.out.println("toAbsolutePath()-> " + path.toAbsolutePath());
         System.out.println("relativize()-> " + path.relativize(Paths.get("c:\\!\\new")));
+        System.out.println("startsWith()-> " + path.startsWith("c:\\!"));
+        System.out.println("endsWith()-> " + path.endsWith(Paths.get("8-1.txt")));
+
+        System.out.println("toAbsolutePath()-> " + Paths.get("").toAbsolutePath());
+        System.out.println("normilize()-> " + Paths.get("..\\8-1.txt").toAbsolutePath().normalize());
+        System.out.println("resolve()-> " + Paths.get("!\\obj8").resolve("..\\topic"));
+
+        System.out.println(Paths.get("/mydir/code").resolve(Paths.get("world/Hello.java")));
+        System.out.println(Paths.get("/mydir/code").resolve("/world/Hello.java"));
+        System.out.println(Paths.get("E:/OCPJavaSE7/").resolve(Paths.get("mydir/code")));
+        System.out.println(Paths.get("mydir/code").resolve(Paths.get("E:/OCPJavaSE7/")));
 
     }
 }
