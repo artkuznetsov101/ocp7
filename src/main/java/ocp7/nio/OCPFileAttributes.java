@@ -12,6 +12,7 @@ import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.DosFileAttributeView;
 import java.nio.file.attribute.DosFileAttributes;
+import java.nio.file.attribute.FileOwnerAttributeView;
 import java.nio.file.attribute.FileTime;
 import java.nio.file.attribute.GroupPrincipal;
 import java.nio.file.attribute.PosixFileAttributeView;
@@ -92,5 +93,9 @@ class OCPFileAttributes {
         for (AclEntry attribute : acl) {
             System.out.println(acl + " : " + attribute);
         }
+
+        //FileOwnerAttributeView
+        FileOwnerAttributeView ownerView = Files.getFileAttributeView(file, FileOwnerAttributeView.class);
+        ownerView.getOwner();
     }
 }
