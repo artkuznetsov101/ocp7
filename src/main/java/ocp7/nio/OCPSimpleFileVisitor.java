@@ -22,7 +22,7 @@ class ListFileNames extends SimpleFileVisitor<Path> {
 
 public class OCPSimpleFileVisitor {
     public static void main(String[] args) throws Exception {
-        Path path = Paths.get("c:\\!");
+        Path path = Paths.get("c:\\work");
         ListFileNames listFileNames = new ListFileNames();
         Files.walkFileTree(path, listFileNames);
     }
