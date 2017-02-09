@@ -10,10 +10,11 @@ public class OCPLocalization {
             System.out.println("all: " + curr + " country: " + curr.getDisplayCountry() + " lang: " + curr.getDisplayLanguage());
 
         Locale curr = Locale.getDefault();
-        System.out.println(curr + " country: " + curr.getDisplayCountry() + " lang: " + curr.getDisplayLanguage());
-
-        Locale eng = new Locale("en", "GB");
-        System.out.println(eng);
+        System.out.println("getDefault: " + curr);
+        System.out.println("getLanguage: " + curr.getLanguage());
+        System.out.println("getCountry: " + curr.getCountry());
+        System.out.println("getDisplayCountry: " + curr.getDisplayCountry());
+        System.out.println("getDisplayName: " + curr.getDisplayName());
 
         Locale.Builder builder = new Locale.Builder();
         builder.setLanguage("fr");
