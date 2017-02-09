@@ -7,7 +7,7 @@ public class OCPSimpleDateFormat {
 
     public static void main(String[] args) {
         Date date = new Date();
-        SimpleDateFormat defaultFormatter = new SimpleDateFormat("'Date is:' EE', 'dd MMMM YYYY G");
+        SimpleDateFormat defaultFormatter = new SimpleDateFormat("'Date is:' EE', 'dd MMMM YYYY G zzzz");
         System.out.println(defaultFormatter.format(date));
     }
 }
