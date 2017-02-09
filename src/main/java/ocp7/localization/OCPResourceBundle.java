@@ -18,7 +18,7 @@ public class OCPResourceBundle {
 
     private void buildShowUI() {
         f.getContentPane().setLayout(new FlowLayout());
-        f.setSize(300, 400);
+        f.setSize(300, 300);
         f.getContentPane().add(lname);
         JPanel panel1 = new JPanel();
         panel1.setLayout(new GridLayout(4, 1));
@@ -44,7 +44,7 @@ public class OCPResourceBundle {
         System.out.println(Locale.getDefault());
 
         OCPResourceBundle ia = new OCPResourceBundle();
-        ia.setLocaleSpecificData(new Locale("en", "GB"));
+        ia.setLocaleSpecificData(Locale.getDefault());//new Locale("en", "GB")
         ia.buildShowUI();
     }
 }
