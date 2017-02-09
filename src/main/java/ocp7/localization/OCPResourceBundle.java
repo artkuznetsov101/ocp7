@@ -2,7 +2,6 @@ package ocp7.localization;
 
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.nio.file.Paths;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -40,9 +39,7 @@ public class OCPResourceBundle {
 
     public static void main(String[] args) {
 
-        System.out.println(Paths.get("").toAbsolutePath());
         System.out.println(Locale.getDefault());
-
         OCPResourceBundle ia = new OCPResourceBundle();
         ia.setLocaleSpecificData(Locale.getDefault());//new Locale("en", "GB")
         ia.buildShowUI();
