@@ -11,6 +11,7 @@ public class OCPDateFormat {
     public static void main(String[] args) {
         Date date = new Date();
         defaultLocale(date);
+        specificLocale(Locale.US, date);
         specificLocale(Locale.GERMANY, date);
         specificLocale(Locale.FRANCE, date);
         specificLocale(Locale.CHINA, date);
