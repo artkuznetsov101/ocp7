@@ -4,7 +4,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class OCPFormatDates {
+public class OCPDateFormat {
     static int[] styles = new int[] { DateFormat.FULL, DateFormat.LONG, DateFormat.MEDIUM, DateFormat.SHORT };
     static String[] desc = new String[] { "FULL", "LONG", "MEDIUM", "SHORT" };
 
