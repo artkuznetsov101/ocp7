@@ -1,63 +1,38 @@
 package ocp7.concurrency;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class OCPReadWriteLock {
-    private Map<String, Integer> marksObtained = new HashMap<String, Integer>();
-    private ReadWriteLock lock = new ReentrantReadWriteLock();
 
-    public void setMarksInSubject(String subject, Integer marks) {
-        lock.writeLock().lock(); //1
-        try {
-            marksObtained.put(subject, marks);
-        } finally {
-            lock.writeLock().unlock(); //2
-        }
-    }
+	private final ArrayList<String> theList = new ArrayList<String>();
+	// Note that ReadWriteLock is an interface.
+	private final ReadWriteLock rwl = new ReentrantReadWriteLock();
+	private final Lock r = rwl.readLock();
+	private final Lock w = rwl.writeLock();
 
-    public double getAverageMarks() {
-        lock.readLock().lock(); //3
-        double sum = 0.0;
-        try {
-            for (Integer mark : marksObtained.values()) {
-                sum = sum + mark;
-            }
-            return sum / marksObtained.size();
-        } finally {
-            lock.readLock().unlock();//4
-        }
-    }
+	public String read() {
+		r.lock();
+		try {
+			System.out.println("reading");
+			if (theList.isEmpty())
+				return null;
+			else
+				return theList.get(0);
+		} finally {
+			r.unlock();
+		}
+	}
 
-    public static void main(String[] args) {
-
-        final OCPReadWriteLock s = new OCPReadWriteLock();
-
-        //create one thread that keeps adding marks
-        new Thread() {
-            public void run() {
-                int x = 0;
-                while (true) {
-                    int m = (int) (Math.random() * 100);
-                    s.setMarksInSubject("Sub " + x, m);
-                    x++;
-                }
-            }
-        }.start();
-
-        //create 5 threads that get average marks
-        for (int i = 0; i < 5; i++) {
-            new Thread() {
-                public void run() {
-                    while (true) {
-                        double av = s.getAverageMarks();
-                        System.out.println(av);
-                    }
-                }
-            }.start();
-        }
-    }
-
+	public void write(String data) {
+		w.lock();
+		try {
+			System.out.println("Written " + data);
+			theList.add(data);
+		} finally {
+			w.unlock();
+		}
+	}
 }
